@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  </head>
+
+  <body>
+
+    <br><br>
+    <div class="container">
+       <div class="starter-template">
+           <h2>Here are some books we think you'll love based on your input. Happy reading!</h2>
+       </div>
+   
+       <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+       <script src="static/js/bootstrap.min.js"></script>
+   
+     </div> <!-- /.container-->
+   
+       <div class="container">
+         <div class="starter-template">
+         </div>
+   
+         <table class="table table-hover">
+
+          {% for r, href in recs %}
+	    <a class="image" href="{{ href }}" style="width: 100px; height: 800px">
+	    <img src="{{ r }}" alt="Image" data-src="{{ r.src }}?w=150&amp;h=250" width="150" height="250" style="border:0px;margin:20px;float:left;width:200px;" />
+	     <button type="submit" class="btn btn-default btn-lg">Get more details</button>
+	    </a>
+         {% endfor %}
+
+         <!--tr><td>{{ r }}</td></tr-->
+         </table>
+   
+        </div>
+   
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

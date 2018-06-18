@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <style>
+      body {
+        background-image: url("../static/book_shelf_2.png");
+        background-size: cover;
+      }
+ </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script type="text/javascript">
+    $(function() {
+        $("#autocomplete").autocomplete({
+            source:function(request, response) {
+                $.getJSON("{{url_for('autocomplete')}}",{
+                    q: request.term, // in flask, "q" will be the argument to look for using request.args
+                }, function(data) {
+                    response(data.matching_results); // matching_results from jsonify
+                });
+            } 
+        });
+    })
+    </script>
+
+</head>
+<body>
+ 
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>-->
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <br><br>
+
+    <div class="container">
+    
+        <div class="starter-template">
+            <h2>Look out of your Nook</h2>
+        </div>
+
+    
+
+        <form  class="form-horizontal" action="/output" method="GET" roles="form">
+          <div class = "row">
+           <label for="games_pos">Books I enjoyed:</label>
+            <div class="form-group">
+	    <input type="text" id="title" >
+              <!--select class="form-control input-lg" name="autocomplete" type="text" id="title" data-size="5" data-live-search="true" title="Novel 1" name="novel_name_pos_1" placeholder=" Select Novel 1 "-->
+		<select class="selectpicker form-control" data-size="10" data-live-search="true" title="Book 1" name="book1" id="book1">
+                {% for o in option_list %}
+                <option data-tokens="{{ o }}" >{{ o }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <!--div class="form-group">
+		<select class="selectpicker form-control" data-size="5" data-live-search="true" title="Book 1" name="book_name_pos_1">
+                {% for o in option_list %}
+                <option data-tokens="{{ o }}" SELECTED>{{ o }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <div class="form-group">
+              <select class="form-control input-lg" name="autocomplete" type="text" id="title" data-size="5" data-live-search="true" title="Novel 1" name="novel_name_pos_1" placeholder=" Select Novel 3 " >
+                {% for o in option_list %}
+                <option data-tokens="{{ o }}" SELECTED>{{ o }}</option>
+                {% endfor %}
+              </select>
+            </div-->
+    
+            <div>
+              <button type="submit" class="btn btn-default btn-lg">Get my recommendations!</button>
+            </div>
+    
+          </div>
+
+        </form>
+
+    
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+    
+      </div> <!-- /.container-->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

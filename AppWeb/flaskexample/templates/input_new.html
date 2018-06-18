@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <style>
+      body {
+        background-image: url("../static/book_shelf_2.png");
+        background-size: cover;
+        <!--background-repeat: repeat;-->
+      }
+ </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> BookNook </title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+
+ <script type="text/javascript">
+   $(function() {
+     //$('.selectpicker').selectpicker({ style: 'btn-info' });
+     $('.selectpicker').selectpicker();
+   })
+ </script>
+
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+        </div>
+      </div>
+    </nav>
+
+   <br><br>
+
+   <div class="container-fluid">
+     <div class="row">
+	<div class="col-md-12">
+	  <div class="starter-template">
+	    <h2> Look out of your Nook! </h2>
+	  </div>
+	    <form class="form-horizontal" role="form" action="/output" method="GET">
+	      <div class="row">
+		<div class="col-md-6">
+		  <label for="games_pos">Books I enjoyed:</label>
+		    <div class="form-group">
+		      <div class="col-sm-10">					 
+                        <select name='book1' placeholder="Default input" class="form-control input-lg" data-size="10" id="book1" data-size="5" data-live-search="true" title="Novel 1" >
+                <option selected>Select Novel 1</option>
+                {% for o in option_list %}
+                <option data-tokens="{{ o }}" >{{ o }}</option>
+                {% endfor %}
+              </select>
+			<!--select class="selectpicker form-control" data-size="5" data-live-search="true" title="Select Book 1" name="book1" id="book1"-->
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <div class="col-sm-10">					 
+                        <select name='book2' placeholder="Default input" class="form-control input-lg" data-size="10" id="book2" data-size="5" data-live-search="true" title="Novel 2" >
+                <option selected>Select Novel 2</option>
+                {% for o in option_list %}
+                <option data-tokens="{{ o }}" >{{ o }}</option>
+                {% endfor %}
+              </select>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <div class="col-sm-10">					 
+                        <select name='book3' class="form-control input-lg" data-size="10" id="book3" data-size="5" data-live-search="true" >
+                <option selected>Select Novel 3</option>
+                {% for o in option_list %}
+                <option data-tokens="{{ o }}" >{{ o }}</option>
+                {% endfor %}
+              </select>
+			<!--select class="selectpicker form-control" data-size="5" data-live-search="true" title="Select Book 1" name="book1" id="book1"-->
+		      </div>
+		    </div>
+
+
+                  </div>
+               </div>
+
+               <div class="row">   
+                 <div class="col-md-4">
+                 </div>
+                 <div class="col-md-4">
+		   <div class="form-group text-center">
+		     <button type="submit" class="btn btn-default btn-lg">Find books!</button>
+		   </div>
+		 </div>    				
+	         <div class="col-md-4">
+	         </div>
+	       </div>
+
+	     </form>
+           <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	   <br>
+	   </div>
+	 </div>
+       </div>
+     </div>
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/scripts.js"></script>
+    <script src="../static/js/dataoptions.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+  </body>
+</html>
