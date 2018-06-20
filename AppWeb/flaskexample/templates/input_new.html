@@ -22,13 +22,12 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
+    <!--script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script-->
   </head>
 
  <script type="text/javascript">
@@ -52,17 +51,19 @@
    <div class="container-fluid">
      <div class="row">
 	<div class="col-md-12">
-	  <div class="starter-template">
-	    <h2> Look out of your Nook! </h2>
-	  </div>
+
+	  <div class="col-md-8">
+	    <h1 style="text-align: center;margin-bottom:30px" > <font size=260> Look out of your Nook! </font></h1>
+	   </div>
 	    <form class="form-horizontal" role="form" action="/output" method="GET">
 	      <div class="row">
 		<div class="col-md-6">
-		  <label for="games_pos">Books I enjoyed:</label>
+		  <h4 size=100 style="margin-left:20px;margin-bottom:20px">Books I enjoyed:</h4>
 		    <div class="form-group">
-		      <div class="col-sm-10">					 
+		      <div class="col-md-10">					 
                         <select name='book1' placeholder="Default input" class="form-control input-lg" data-size="10" id="book1" data-size="5" data-live-search="true" title="Novel 1" >
                 <option selected>Select Novel 1</option>
+		<!--option hidden="true">Select Novel 1</option-->
                 {% for o in option_list %}
                 <option data-tokens="{{ o }}" >{{ o }}</option>
                 {% endfor %}
@@ -71,7 +72,7 @@
 		      </div>
 		    </div>
 		    <div class="form-group">
-		      <div class="col-sm-10">					 
+		      <div class="col-md-10">					 
                         <select name='book2' placeholder="Default input" class="form-control input-lg" data-size="10" id="book2" data-size="5" data-live-search="true" title="Novel 2" >
                 <option selected>Select Novel 2</option>
                 {% for o in option_list %}
@@ -82,7 +83,7 @@
 		    </div>
 
 		    <div class="form-group">
-		      <div class="col-sm-10">					 
+		      <div class="col-md-10">					 
                         <select name='book3' class="form-control input-lg" data-size="10" id="book3" data-size="5" data-live-search="true" >
                 <option selected>Select Novel 3</option>
                 {% for o in option_list %}
@@ -102,14 +103,30 @@
                  </div>
                  <div class="col-md-4">
 		   <div class="form-group text-center">
-		     <button type="submit" class="btn btn-default btn-lg">Find books!</button>
+		     <button type="submit" class="btn btn-default btn-lg" style="margin-top:60px">Find books out of my comfort genre!</button>
 		   </div>
 		 </div>    				
 	         <div class="col-md-4">
 	         </div>
 	       </div>
-
 	     </form>
+
+               <form class="form-horizontal" role="form" action="/output_genre" method="GET">
+               <div class="row">   
+                 <div class="col-md-4">
+                 </div>
+                 <div class="col-md-4">
+		   <div class="form-group text-center">
+		     <h6 style="margin-top:20px;margin-bottom:20px">or <br><br> </h6>
+		     <button type="submit" class="btn btn-default btn-lg">Find books of any genre!</button>
+		   </div>
+		 </div>    				
+	         <div class="col-md-4">
+	         </div>
+	       </div>
+	       </form> 
+
+
            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	   <br>
 	   </div>
