@@ -77,7 +77,7 @@ def autocomplete():
 def user_input():
     my_list = df_books.title.values
     print("\n\n\n\nINPUT List first item: ",my_list[0])
-    return render_template("input_new.html",option_list=my_list)
+    return render_template("input_new_new.html") #,option_list=my_list)
 
 @app.route('/output')
 def user_output():
@@ -129,9 +129,9 @@ def user_output():
     if genrei not in top_3_genre_names_per_user:
       top_3_genre_names_per_user.append(genrei)
 
-  if len(top_3_genre_names_per_user) == 0:
-    my_list = df_books.title.values
-    return render_template("input_new.html",option_list=my_list)
+  #if len(top_3_genre_names_per_user) == 0:
+  #  my_list = df_books.title.values
+  #  return render_template("input_new_new.html",option_list=my_list)
 
   for i in range(3):
     if int(book_list[i]) == 0:
@@ -261,8 +261,8 @@ def user_output_genre():
     if genrei not in top_3_genre_names_per_user:
       top_3_genre_names_per_user.append(genrei)
 
-  if len(top_3_genre_names_per_user) == 0:
-    return render_template("input_new.html", the_result = '')
+  #if len(top_3_genre_names_per_user) == 0:
+  #  return render_template("input_new.html", the_result = '')
 
   for i in range(3):
     if int(book_list[i]) == 0:
