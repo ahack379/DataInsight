@@ -1,0 +1,10 @@
+Plots/
+*.py
+.ipynb_checkpoints
+goodbooks-10k/
+*.swp
+*.swo
+*.txt 
+__pycache__/
+
+Week[234]/
