@@ -7,7 +7,7 @@ This directory contains the main analysis code for Shelf Explorer, a web app tha
 
 WebApp/ 
 This directory includes the code needed to run the ShelfExplorer interface locally. Note that the goodreads data set used in this web application is not included in the repository.  To run locally (with the dataset):
-> cd WebApp/
+> cd WebApp
 > python run.py
 
 In browser, open localhost:5000
