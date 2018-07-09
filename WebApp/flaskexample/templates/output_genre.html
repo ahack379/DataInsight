@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <style>
+      body {
+        background-image: url("../static/book_shelf_2.png");
+        background-size: cover;
+        <!--background-repeat: repeat;-->
+      }
+  </style>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,34 +37,43 @@
   <body>
 
     <br><br>
-    <div class="container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+
        <div class="starter-template">
-           <h2>Here are some books we think you'll love based on your input. Happy reading!</h2>
+           <h2 style="margin-left:50px">You enjoy reading: </h2>
+          {% for g in genres %}
+           <h2 style="margin-left:300px">{{ g }}</h2>
+           {% endfor %}
+           
+           <h2 style="margin-left:150px;margin-top:30px"> Here are some books readers like you enjoyed:</h2>
        </div>
-   
-       <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-       <script src="static/js/bootstrap.min.js"></script>
-   
-     </div> <!-- /.container-->
-   
-       <div class="container">
-         <div class="starter-template">
-         </div>
-   
-         <table class="table table-hover">
 
-          {% for r, href in recs %}
-	    <a class="image" href="{{ href }}" style="width: 100px; height: 800px">
-	    <img src="{{ r }}" alt="Image" data-src="{{ r.src }}?w=150&amp;h=250" width="150" height="250" style="border:0px;margin:20px;float:left;width:200px;" />
-	     <button type="submit" class="btn btn-default btn-lg">Get more details</button>
-	    </a>
-         {% endfor %}
+	<div class="row" >
+                {% for r, href, title, author, genre in recs %}
+	  <div class="col-lg-4" >
+	    <div class="thumbnail" >
+	      <img src="{{ r }}" alt="Image" style="text-align:justify;width:210px;display:block;border:0px;margin-left:80px;margin-top:80px;margin-bottom:20px;width:210px;height:290px"/>
+	        <div class="caption">
+		   <h4 style="margin-left:80px;margin-top:20px;margin-bottom:20px;width:350px">"{{ title }}" <br> by {{ author }} </h4>
+		   <h5 style="margin-left:80px;margin-top:20px">Genre: {{ genre }}</h5>
+                        <a class="button" style="margin:80px" href="{{ href }}"  >
+			  <button type="submit" class="btn btn-default btn-lg ">Get more book details</button>
+	                </a>
+	           </div>
+	    </div>
+	  </div>
+                {% endfor %}
+              <!--/table-->
+	</div>
+      </div>
+    </div>
 
-         <!--tr><td>{{ r }}</td></tr-->
-         </table>
-   
-        </div>
-   
+    <div class="starter-template">
+        <p> <h1 style="margin-left:100px;margin-top:80px;margin-bottom:80px"> Happy reading! </h1> </p>
+     </div>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

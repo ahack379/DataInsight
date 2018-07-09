@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <style>
+      body {
+        background-image: url("../static/book_shelf_2.png");
+        background-size: cover;
+        <!--background-repeat: repeat;-->
+      }
+  </style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  </head>
+
+  <body>
+
+    <br><br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+       <div class="starter-template">
+           <h2 style="margin-left:50px">You enjoy reading: </h2>
+          {% for g in genres %}
+           <h2 style="margin-left:300px">{{ g }}</h2>
+           {% endfor %}
+           <h2 style="margin-left:150px;margin-top:30px"> Here are some off-genre books readers like you enjoyed:</h2>
+       </div>
+
+	<div class="row" >
+                {% for r, href, title, author, genre in recs %}
+	  <div class="col-lg-4" >
+	    <div class="thumbnail" >
+	      <img src="{{ r }}" alt="Image" style="text-align:justify;width:210px;display:block;border:0px;margin-left:80px;margin-top:80px;margin-bottom:20px;width:210px;height:290px"/>
+	        <div class="caption">
+		   <h4 style="margin-left:80px;margin-top:20px;margin-bottom:20px;width:350px">"{{ title }}" <br> by {{ author }} </h4>
+		   <h5 style="margin-left:80px;margin-top:20px">Genre: {{ genre }}</h5>
+                        <a class="button" style="margin:80px" href="{{ href }}"  >
+			  <button type="submit" class="btn btn-default btn-lg ">Get more book details</button>
+	                </a>
+	         </div>
+	    </div>
+	  </div>
+                {% endfor %}
+	</div>
+
+
+
+	<div class="container-fluid" >
+               <div class="row">   
+                  <div class="col-md-12">
+                   <form class="form-horizontal" role="form" action="/output_extra" method="GET" autocomplete="off" action="/action_page.php">
+                    <div class="form-group text-center">
+                      <a class="button" style="margin:80px" >
+                      <button type="submit" class="btn btn-default btn-lg" style="margin-top:60px">Get more recommendations!</button>
+                      </a>
+                    </div>
+                  </form>
+                 </div>
+            </div>
+       </div>
+
+
+        <!--br><br><br>
+
+
+	<div class="container-fluid" >
+               <div class="row">   
+                  <div class="col-md-12">
+                    <div class="form-group text-center">
+                      <a class="button" style="margin:80px" href="{{ href }}"  >
+                        <button type="submit" class="btn btn-default btn-lg ">Get more book details</button>
+                   	<div class="row" >
+                           {% for r, href, title, author, genre in extra_recs %}
+                   	  <div class="col-lg-4" >
+                   	    <div class="thumbnail" >
+                   	      <img src="{{ r }}" alt="Image" style="text-align:justify;width:210px;display:block;border:0px;margin-left:80px;margin-top:80px;margin-bottom:20px;width:210px;height:290px"/>
+                   	        <div class="caption">
+                   		   <h4 style="margin-left:80px;margin-top:20px;margin-bottom:20px;width:350px">"{{ title }}" <br> by {{ author }} </h4>
+                   		   <h5 style="margin-left:80px;margin-top:20px">Genre: {{ genre }}</h5>
+                   	                </a>
+                   	         </div>
+                   	    </div>
+                   	  </div>
+                           {% endfor %}
+                   	</div>
+
+
+                    <a class="button" style="margin:80px" >
+                      <button type="submit" class="btn btn-default btn-lg" style="margin-top:60px">Get more recommendations!</button>
+                   </a>
+
+                    </div>
+                  </div>    
+                 </div>
+         </div-->
+
+
+
+	<!--div class="row" >
+                {% for r, href, title, author, genre in recs %}
+	  <div class="col-lg-4" >
+	    <div class="thumbnail" >
+	      <img src="{{ r }}" alt="Image" style="text-align:justify;width:210px;display:block;border:0px;margin-left:80px;margin-top:80px;margin-bottom:20px;width:210px;height:290px"/>
+	        <div class="caption">
+		   <h4 style="margin-left:80px;margin-top:20px;margin-bottom:20px;width:350px">"{{ title }}" <br> by {{ author }} </h4>
+		   <h5 style="margin-left:80px;margin-top:20px">Genre: {{ genre }}</h5>
+                        <a class="button" style="margin:80px" href="{{ href }}"  >
+			  <button type="submit" class="btn btn-default btn-lg ">Get more book details</button>
+	                </a>
+	         </div>
+	    </div>
+	  </div>
+                {% endfor %}
+	</div-->
+
+
+      </div>
+    </div>
+
+    <div class="starter-template">
+        <p> <h1 style="margin-left:100px;margin-top:80px;margin-bottom:80px"> Happy reading! </h1> </p>
+     </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

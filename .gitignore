@@ -8,3 +8,4 @@ goodbooks-10k/
 __pycache__/
 
 Week[234]/
+*.csv
